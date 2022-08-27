@@ -12,6 +12,7 @@ class CatBreed: ObservableObject {
     // MARK: - Constants
     let baseUrl = "https://api.thecatapi.com/v1"
     let path = "/breeds"
+    let params = "?limit=9"
     
     let session = URLSession.shared
     let decoder = JSONDecoder()
@@ -23,44 +24,56 @@ class CatBreed: ObservableObject {
     
     // MARK: - Computing Variables
     var url: URL? {
-        URL(string: "\(baseUrl)\(path)")
+        URL(string: "\(baseUrl)\(path)\(params)")
     }
     
     // MARK: - LifeCycle
-    init() {}
+    init() {
+        fetchAll()
+    }
     
     
     // MARK: - Functions
     func fetchAll() {
         guard let url = url else {
+            print("Not a valid URL")
             return
         }
         
         isLoading = true
+        
         session.dataTask(with: url) { [unowned self] data, res, err in
             
             // returns when there is any error
-            if let _ = err {
+            if let err = err {
+                print("Not able to loads the breeds: \(err.localizedDescription)")
                 return
             }
             
             // returns when the response status code is not 200
             guard let res = res as? HTTPURLResponse, res.statusCode == 200 else {
+                print("Wrong status code")
                 return
             }
             
             // returns if data is missing
-            guard let data = data else { return }
-            
-            do {
-                let breeds = try decoder.decode([Breed].self, from: data)
-                self.breeds = breeds
-            } catch {
+            guard let breedData = data else {
+                print("No data returned")
                 return
             }
             
-            self.isLoading = false
+            do {
+                let breeds = try decoder.decode([Breed].self, from: breedData)
+                
+                DispatchQueue.main.async {
+                    self.breeds = breeds
+                    self.isLoading = false
+                }
+            } catch {
+                print("Failed to decode the data: \(error)")
+            }
         }
+        .resume()
     }
     
 }
