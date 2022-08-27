@@ -13,7 +13,7 @@ struct Breed: Codable {
     let temperament: String
     let lifeSpan: String
     let isHairless: Bool
-    let image: BreedImage
+    let image: BreedImage?
     
     // need to call init to assgin the value properly because hairless is an Int from the CatAPI, but we want it to be Bool.
     init(from decoder: Decoder) throws {
@@ -23,7 +23,7 @@ struct Breed: Codable {
         name = try values.decode(String.self, forKey: .name)
         temperament = try values.decode(String.self, forKey: .temperament)
         lifeSpan = try values.decode(String.self, forKey: .lifeSpan)
-        image = try values.decode(BreedImage.self, forKey: .image)
+        image = try values.decodeIfPresent(BreedImage.self, forKey: .image)
         
         let hairless = try values.decode(Int.self, forKey: .isHairless)
         isHairless = hairless == 1
@@ -49,7 +49,7 @@ extension Breed: CustomStringConvertible {
         termperament: \(temperament)
         life span: \(lifeSpan)
         is hairlesss: \(isHairless)
-        imageURL: \(image.url)
+        imageURL: \(image?.url ?? "No Image")
         \n
         >--------------------------------------<
         """

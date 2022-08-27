@@ -12,7 +12,6 @@ class CatBreed: ObservableObject {
     // MARK: - Constants
     let baseUrl = "https://api.thecatapi.com/v1"
     let path = "/breeds"
-    let params = "?limit=9"
     
     let session = URLSession.shared
     let decoder = JSONDecoder()
@@ -24,7 +23,7 @@ class CatBreed: ObservableObject {
     
     // MARK: - Computing Variables
     var url: URL? {
-        URL(string: "\(baseUrl)\(path)\(params)")
+        URL(string: "\(baseUrl)\(path)")
     }
     
     // MARK: - LifeCycle
@@ -64,6 +63,7 @@ class CatBreed: ObservableObject {
             
             do {
                 let breeds = try decoder.decode([Breed].self, from: breedData)
+                print(breeds)
                 
                 DispatchQueue.main.async {
                     self.breeds = breeds
