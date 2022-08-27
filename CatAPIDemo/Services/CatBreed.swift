@@ -35,7 +35,7 @@ class CatBreed: ObservableObject {
     // MARK: - Functions
     func fetchAll() {
         guard let url = url else {
-            print("Not a valid URL")
+            errorMessage = APIError.badURL.localizedDescription
             return
         }
         
@@ -45,19 +45,21 @@ class CatBreed: ObservableObject {
             
             // returns when there is any error
             if let err = err {
-                print("Not able to loads the breeds: \(err.localizedDescription)")
+                errorMessage = err.localizedDescription
                 return
             }
             
             // returns when the response status code is not 200
             guard let res = res as? HTTPURLResponse, res.statusCode == 200 else {
-                print("Wrong status code")
+                //TODO - get the statusCode and replace the 0 here
+                errorMessage = APIError.badResponse(statusCode: 0).localizedDescription
                 return
             }
             
             // returns if data is missing
             guard let breedData = data else {
-                print("No data returned")
+                //TODO - get the statusCode and replace the 0 here
+                errorMessage = APIError.badResponse(statusCode: 0).localizedDescription
                 return
             }
             
@@ -70,7 +72,7 @@ class CatBreed: ObservableObject {
                     self.isLoading = false
                 }
             } catch {
-                print("Failed to decode the data: \(error)")
+                errorMessage = error.localizedDescription
             }
         }
         .resume()
