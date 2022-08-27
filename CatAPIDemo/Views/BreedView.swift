@@ -25,7 +25,7 @@ struct BreedView: View {
             List {
                 ForEach(filteredBreeds) { breed in
                     NavigationLink {
-                        EmptyView()
+                        BreedDetailView(breed: breed)
                     } label: {
                         CatBreedCell(breed: breed)
                     }

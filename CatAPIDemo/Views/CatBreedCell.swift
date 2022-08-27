@@ -9,33 +9,15 @@ import SwiftUI
 
 struct CatBreedCell: View {
     let breed: Breed
-    let imageSize: CGFloat = 100
+    
+    let imageSize = CGSize(width: 100, height: 100)
+    var imageUrl: URL? {
+        URL(string: breed.image?.url ?? "")
+    }
     
     var body: some View {
         HStack {
-            if let imageUrl = URL(string: "\(breed.image?.url ?? "")") {
-                AsyncImage(url: imageUrl) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: imageSize, height: imageSize)
-                            .clipped()
-                            .cornerRadius(10)
-                    } else if phase.error != nil {
-                        Color.red
-                            .frame(width: imageSize, height: imageSize)
-                            .cornerRadius(10)
-                    } else {
-                        ProgressView()
-                            .frame(width: imageSize, height: imageSize)
-                    }
-                }
-            } else {
-                Color.gray
-                    .frame(width: imageSize, height: imageSize)
-                    .cornerRadius(10)
-            }
+            CustomImage(size: imageSize, url: imageUrl, cornerRadius: 10)
             
             VStack(alignment: .leading, spacing: 8) {
                 Text(breed.name)
