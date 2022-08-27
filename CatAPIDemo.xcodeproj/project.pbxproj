@@ -16,6 +16,7 @@
 		EBC4CAC228BA86E600D2C10A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4CAC128BA86E600D2C10A /* LoadingView.swift */; };
 		EBC4CAC428BA8AD700D2C10A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4CAC328BA8AD700D2C10A /* ErrorView.swift */; };
 		EBC4CAC728BA9D1C00D2C10A /* PreviewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4CAC628BA9D1C00D2C10A /* PreviewHelpers.swift */; };
+		EBC4CAC928BAA82D00D2C10A /* CatBreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4CAC828BAA82D00D2C10A /* CatBreedCell.swift */; };
 		EBF3C41E28B94B5400218310 /* CatAPIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3C41D28B94B5400218310 /* CatAPIDemoApp.swift */; };
 		EBF3C42028B94B5400218310 /* CatMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3C41F28B94B5400218310 /* CatMainView.swift */; };
 		EBF3C42228B94B5700218310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF3C42128B94B5700218310 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		EBC4CAC128BA86E600D2C10A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EBC4CAC328BA8AD700D2C10A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		EBC4CAC628BA9D1C00D2C10A /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
+		EBC4CAC828BAA82D00D2C10A /* CatBreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedCell.swift; sourceTree = "<group>"; };
 		EBF3C41A28B94B5400218310 /* CatAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF3C41D28B94B5400218310 /* CatAPIDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIDemoApp.swift; sourceTree = "<group>"; };
 		EBF3C41F28B94B5400218310 /* CatMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatMainView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				EB20F8FF28B9AAB400F25605 /* BreedView.swift */,
 				EBC4CAC128BA86E600D2C10A /* LoadingView.swift */,
 				EBC4CAC328BA8AD700D2C10A /* ErrorView.swift */,
+				EBC4CAC828BAA82D00D2C10A /* CatBreedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC4CAC928BAA82D00D2C10A /* CatBreedCell.swift in Sources */,
 				EB20F8FD28B9A05A00F25605 /* CatBreed.swift in Sources */,
 				EB20F90028B9AAB400F25605 /* BreedView.swift in Sources */,
 				EBC4CAC728BA9D1C00D2C10A /* PreviewHelpers.swift in Sources */,

@@ -11,6 +11,7 @@ struct CatMainView: View {
     @StateObject private var catBreed = CatBreed()
     
     var body: some View {
+        // TO-DO: redesing the View here
         ZStack {
             if catBreed.isLoading {
                 LoadingView()

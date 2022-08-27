@@ -13,7 +13,7 @@ struct BreedView: View {
     var body: some View {
         List {
             ForEach(breeds) { breed in
-                Text(breed.name)
+                CatBreedCell(breed: breed)
             }
         }
     }
