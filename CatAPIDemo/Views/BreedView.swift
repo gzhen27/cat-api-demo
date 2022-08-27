@@ -11,10 +11,18 @@ struct BreedView: View {
     let breeds: [Breed]
     
     var body: some View {
-        List {
-            ForEach(breeds) { breed in
-                CatBreedCell(breed: breed)
+        NavigationView {
+            List {
+                ForEach(breeds) { breed in
+                    NavigationLink {
+                        EmptyView()
+                    } label: {
+                        CatBreedCell(breed: breed)
+                    }
+                }
             }
+            .listStyle(PlainListStyle())
+            .navigationTitle("Find Your Perfect Cat")
         }
     }
 }
