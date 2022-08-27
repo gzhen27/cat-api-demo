@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CatMainView: View {
-    @StateObject var catBreed = CatBreed()
+    @StateObject private var catBreed = CatBreed()
     
     var body: some View {
         ZStack {
@@ -19,7 +19,7 @@ struct CatMainView: View {
     }
 }
 
-struct CatView_Previews: PreviewProvider {
+struct CatMainView_Previews: PreviewProvider {
     static var previews: some View {
         CatMainView()
     }

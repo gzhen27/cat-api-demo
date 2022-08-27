@@ -13,6 +13,8 @@ class CatBreed: ObservableObject {
     let baseUrl = "https://api.thecatapi.com/v1"
     let path = "/breeds"
     
+    let apiService = APIService()
+    
     // MARK: - Property Wrappers
     @Published var breeds = [Breed]()
     @Published var isLoading: Bool = false
@@ -34,7 +36,7 @@ class CatBreed: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        APIService.fetchBreeds(url: url) { [unowned self] result in
+        apiService.fetchBreeds(url: url) { [unowned self] result in
             switch result {
             case .failure(let err):
                 self.errorMessage = err.localizedDescription
