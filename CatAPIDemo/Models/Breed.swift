@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CatBreed: Codable {
+struct Breed: Codable {
     let id: String
     let name: String
     let temperament: String
@@ -37,7 +37,7 @@ struct CatBreed: Codable {
 
 }
 
-extension CatBreed: CustomStringConvertible {
+extension Breed: CustomStringConvertible {
     
     var description: String {
         return """
