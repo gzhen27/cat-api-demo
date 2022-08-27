@@ -13,8 +13,9 @@
 		EB20F90028B9AAB400F25605 /* BreedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F8FF28B9AAB400F25605 /* BreedView.swift */; };
 		EBC4CABE28BA6EF400D2C10A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4CABD28BA6EF400D2C10A /* APIError.swift */; };
 		EBC4CAC028BA786000D2C10A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4CABF28BA786000D2C10A /* APIService.swift */; };
+		EBC4CAC228BA86E600D2C10A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4CAC128BA86E600D2C10A /* LoadingView.swift */; };
 		EBF3C41E28B94B5400218310 /* CatAPIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3C41D28B94B5400218310 /* CatAPIDemoApp.swift */; };
-		EBF3C42028B94B5400218310 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3C41F28B94B5400218310 /* CatView.swift */; };
+		EBF3C42028B94B5400218310 /* CatMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3C41F28B94B5400218310 /* CatMainView.swift */; };
 		EBF3C42228B94B5700218310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF3C42128B94B5700218310 /* Assets.xcassets */; };
 		EBF3C42528B94B5700218310 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF3C42428B94B5700218310 /* Preview Assets.xcassets */; };
 		EBF3C42F28B94B5800218310 /* CatAPIDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3C42E28B94B5800218310 /* CatAPIDemoTests.swift */; };
@@ -46,9 +47,10 @@
 		EB20F8FF28B9AAB400F25605 /* BreedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedView.swift; sourceTree = "<group>"; };
 		EBC4CABD28BA6EF400D2C10A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		EBC4CABF28BA786000D2C10A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		EBC4CAC128BA86E600D2C10A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EBF3C41A28B94B5400218310 /* CatAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF3C41D28B94B5400218310 /* CatAPIDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIDemoApp.swift; sourceTree = "<group>"; };
-		EBF3C41F28B94B5400218310 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
+		EBF3C41F28B94B5400218310 /* CatMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatMainView.swift; sourceTree = "<group>"; };
 		EBF3C42128B94B5700218310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBF3C42428B94B5700218310 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBF3C42A28B94B5800218310 /* CatAPIDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatAPIDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,8 +107,9 @@
 		EB20F8FE28B9AA3900F25605 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EBF3C41F28B94B5400218310 /* CatView.swift */,
+				EBF3C41F28B94B5400218310 /* CatMainView.swift */,
 				EB20F8FF28B9AAB400F25605 /* BreedView.swift */,
+				EBC4CAC128BA86E600D2C10A /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,10 +314,11 @@
 				EB20F90028B9AAB400F25605 /* BreedView.swift in Sources */,
 				EB20F8FA28B99EDC00F25605 /* Breed.swift in Sources */,
 				EB20F8F728B99E8900F25605 /* BreedImage.swift in Sources */,
-				EBF3C42028B94B5400218310 /* CatView.swift in Sources */,
+				EBF3C42028B94B5400218310 /* CatMainView.swift in Sources */,
 				EBF3C41E28B94B5400218310 /* CatAPIDemoApp.swift in Sources */,
 				EBC4CAC028BA786000D2C10A /* APIService.swift in Sources */,
 				EBC4CABE28BA6EF400D2C10A /* APIError.swift in Sources */,
+				EBC4CAC228BA86E600D2C10A /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
