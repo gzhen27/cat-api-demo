@@ -15,6 +15,10 @@ struct CatMainView: View {
             if catBreed.isLoading {
                 LoadingView()
             }
+            
+            if catBreed.breeds.count > 0 {
+                BreedView(breeds: catBreed.breeds)
+            }
         }
     }
 }

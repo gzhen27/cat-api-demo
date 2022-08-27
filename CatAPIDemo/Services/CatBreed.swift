@@ -44,7 +44,6 @@ class CatBreed: ObservableObject {
                 DispatchQueue.main.async {
                     self.breeds = breeds
                 }
-                print(breeds)
             }
             DispatchQueue.main.async {
                 self.isLoading = false

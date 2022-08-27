@@ -11,12 +11,16 @@ struct BreedView: View {
     let breeds: [Breed]
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(breeds) { breed in
+                Text(breed.name)
+            }
+        }
     }
 }
 
 struct BreedView_Previews: PreviewProvider {
     static var previews: some View {
-        BreedView(breeds: [])
+        BreedView(breeds: CatBreed.successState().breeds)
     }
 }

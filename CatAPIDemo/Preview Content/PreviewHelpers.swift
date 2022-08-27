@@ -28,6 +28,11 @@ extension Breed {
             breeds.append(breed)
         }
         
+        (10...30).forEach{ n in
+            let breed = Breed(id: "\(n)", name: "test\(n)", temperament: "test\(n) temperament", lifeSpan: "test\(n) life span", isHairless: isHairless, image: nil)
+            breeds.append(breed)
+        }
+        
         return breeds
     }
 }
