@@ -29,6 +29,15 @@ struct Breed: Codable {
         isHairless = hairless == 1
     }
     
+    init(id: String, name: String, temperament: String, lifeSpan: String, isHairless: Bool, image: BreedImage?) {
+        self.id = id
+        self.name = name
+        self.temperament = temperament
+        self.lifeSpan = lifeSpan
+        self.isHairless = isHairless
+        self.image = image
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, name, temperament, image
         case lifeSpan = "life_span"
