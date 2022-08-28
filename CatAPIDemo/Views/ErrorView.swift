@@ -15,12 +15,19 @@ struct ErrorView: View {
             Text(catBreed.errorMessage ?? "Errors")
                 .foregroundColor(.red)
                 .bold()
+            Button {
+                catBreed.fetchAll()
+            } label: {
+                Text("Try again")
+                    .padding()
+            }
+
         }
     }
 }
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(catBreed: CatBreed.errorState())
+        ErrorView(catBreed: CatBreed())
     }
 }

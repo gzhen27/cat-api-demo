@@ -11,13 +11,12 @@ struct CatMainView: View {
     @StateObject private var catBreed = CatBreed()
     
     var body: some View {
-        // TO-DO: redesing the View here
-        ZStack {
+        VStack {
             if catBreed.isLoading {
                 LoadingView()
-            }
-            
-            if catBreed.breeds.count > 0 {
+            } else if catBreed.errorMessage != nil {
+                ErrorView(catBreed: catBreed)
+            } else {
                 BreedView(breeds: catBreed.breeds)
             }
         }

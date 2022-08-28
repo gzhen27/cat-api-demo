@@ -37,15 +37,13 @@ class CatBreed: ObservableObject {
         errorMessage = nil
         
         apiService.fetchBreeds(url: url) { [unowned self] result in
-            switch result {
-            case .failure(let err):
-                self.errorMessage = err.localizedDescription
-            case .success(let breeds):
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let err):
+                    self.errorMessage = err.localizedDescription
+                case .success(let breeds):
                     self.breeds = breeds
                 }
-            }
-            DispatchQueue.main.async {
                 self.isLoading = false
             }
         }

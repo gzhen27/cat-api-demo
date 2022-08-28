@@ -109,7 +109,6 @@
 			children = (
 				EBC4CABC28BA6ED500D2C10A /* Helpers */,
 				EB20F8FC28B9A05A00F25605 /* CatBreed.swift */,
-				EBC4CABF28BA786000D2C10A /* APIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -132,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				EBC4CABD28BA6EF400D2C10A /* APIError.swift */,
+				EBC4CABF28BA786000D2C10A /* APIService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
