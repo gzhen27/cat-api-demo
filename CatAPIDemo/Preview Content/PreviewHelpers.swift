@@ -12,7 +12,15 @@ extension Breed {
      gets the test data - an example of Breed
      */
     static func getBreed() -> Breed {
-        return Breed(id: "01", name: "test01", temperament: "test01 temperament", lifeSpan: "test01 life span", isHairless: false, image: nil)
+        return Breed(
+            id: "01",
+            name: "test01",
+            temperament: "test01 temperament",
+            lifeSpan: "test01 life span",
+            explaination: "test01 explaination",
+            energyLevel: 5,
+            isHairless: false,
+            image: nil)
     }
     
     /**
@@ -23,13 +31,16 @@ extension Breed {
         
         let isHairless = Int.random(in: 0...1) != 0
         
-        (1...9).forEach { n in
-            let breed = Breed(id: "0\(n)", name: "test0\(n)", temperament: "test0\(n) temperament", lifeSpan: "test0\(n) life span", isHairless: isHairless, image: nil)
-            breeds.append(breed)
-        }
-        
-        (10...30).forEach{ n in
-            let breed = Breed(id: "\(n)", name: "test\(n)", temperament: "test\(n) temperament", lifeSpan: "test\(n) life span", isHairless: isHairless, image: nil)
+        (1...10).forEach { n in
+            let breed = Breed(
+                id: "\(n)",
+                name: "test\(n)",
+                temperament: "test\(n) temperament",
+                lifeSpan: "test\(n) life span",
+                explaination: "test\(n) explaination",
+                energyLevel: 5,
+                isHairless: isHairless,
+                image: nil)
             breeds.append(breed)
         }
         

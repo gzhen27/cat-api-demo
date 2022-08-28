@@ -12,6 +12,8 @@ struct Breed: Codable, Identifiable {
     let name: String
     let temperament: String
     let lifeSpan: String
+    let explaination: String
+    let energyLevel: Int
     let isHairless: Bool
     let image: BreedImage?
     
@@ -23,17 +25,21 @@ struct Breed: Codable, Identifiable {
         name = try values.decode(String.self, forKey: .name)
         temperament = try values.decode(String.self, forKey: .temperament)
         lifeSpan = try values.decode(String.self, forKey: .lifeSpan)
+        explaination = try values.decode(String.self, forKey: .explaination)
+        energyLevel = try values.decode(Int.self, forKey: .energyLevel)
         image = try values.decodeIfPresent(BreedImage.self, forKey: .image)
         
         let hairless = try values.decode(Int.self, forKey: .isHairless)
         isHairless = hairless == 1
     }
     
-    init(id: String, name: String, temperament: String, lifeSpan: String, isHairless: Bool, image: BreedImage?) {
+    init(id: String, name: String, temperament: String, lifeSpan: String, explaination: String, energyLevel: Int, isHairless: Bool, image: BreedImage?) {
         self.id = id
         self.name = name
         self.temperament = temperament
         self.lifeSpan = lifeSpan
+        self.explaination = explaination
+        self.energyLevel = energyLevel
         self.isHairless = isHairless
         self.image = image
     }
@@ -42,6 +48,8 @@ struct Breed: Codable, Identifiable {
         case id, name, temperament, image
         case lifeSpan = "life_span"
         case isHairless = "hairless"
+        case explaination = "description"
+        case energyLevel = "energy_level"
     }
 
 }

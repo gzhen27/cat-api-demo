@@ -33,9 +33,9 @@ struct BreedView: View {
             }
             .listStyle(PlainListStyle())
             .navigationTitle("Find Your Perfect Cat")
+            .searchable(text: $searchText)
         }
         .navigationViewStyle(.stack)
-        .searchable(text: $searchText)
     }
 }
 

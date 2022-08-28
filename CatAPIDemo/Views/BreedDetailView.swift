@@ -17,8 +17,31 @@ struct BreedDetailView: View {
     var body: some View {
         GeometryReader { geo in
             let imageSize = CGSize(width: geo.size.width, height: geo.size.width*0.67)
-            VStack {
-                CustomImage(size: imageSize, url: imageUrl)
+            ScrollView {
+                VStack {
+                    CustomImage(size: imageSize, url: imageUrl, cornerRadius: 10, imageRatio: .scaleToFit)
+                    VStack(alignment: .leading, spacing: 15) {
+                        Text(breed.name)
+                            .font(.headline)
+                        Text(breed.temperament)
+                            .font(.footnote)
+                        Text(breed.explaination)
+                        
+                        HStack {
+                            Text("Energy Level")
+                            Spacer()
+                            ForEach(1..<6) { num in
+                                Image(systemName: "heart.fill")
+                                    .foregroundColor(
+                                        breed.energyLevel >= num ? .pink : .gray
+                                    )
+                            }
+                        }
+                    }
+                    .padding()
+                    .navigationBarTitleDisplayMode(.inline)
+                    Spacer()
+                }
             }
         }
     }

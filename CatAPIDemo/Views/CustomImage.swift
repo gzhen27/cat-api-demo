@@ -7,27 +7,46 @@
 
 import SwiftUI
 
+
+// temporary fix for the ratio
+enum ImageRatio {
+    case scaleToFit
+    case scaleToFill
+}
+
 struct CustomImage: View {
     let size: CGSize
     let url: URL?
     let cornerRadius: CGFloat
+    let imageRatio: ImageRatio
     
-    init(size: CGSize, url: URL?, cornerRadius: CGFloat = 0.0) {
+    init(size: CGSize, url: URL?, cornerRadius: CGFloat = 0.0, imageRatio: ImageRatio = .scaleToFill) {
         self.size = size
         self.url = url
         self.cornerRadius = cornerRadius
+        self.imageRatio = imageRatio
     }
     
     var body: some View {
         if let imageUrl = url {
             AsyncImage(url: imageUrl) { phase in
                 if let image = phase.image {
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: size.width, height: size.height)
-                        .clipped()
-                        .cornerRadius(cornerRadius)
+                    // temporary fix for the ratio
+                    if imageRatio == .scaleToFill {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: size.width, height: size.height)
+                            .clipped()
+                            .cornerRadius(cornerRadius)
+                    } else {
+                        image
+                            .resizable()
+                            .cornerRadius(cornerRadius)
+                            .scaledToFit()
+                            .frame(width: size.width, height: size.height)
+                            .clipped()
+                    }
                 } else if phase.error != nil {
                     Color.red
                         .frame(width: size.width, height: size.height)
