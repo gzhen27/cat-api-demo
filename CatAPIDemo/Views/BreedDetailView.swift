@@ -20,12 +20,14 @@ struct BreedDetailView: View {
             ScrollView {
                 VStack {
                     CustomImage(size: imageSize, url: imageUrl, cornerRadius: 10, imageRatio: .scaleToFit)
-                    VStack(alignment: .leading, spacing: 15) {
+                    VStack(alignment: .leading, spacing: 20) {
                         Text(breed.name)
                             .font(.headline)
-                        Text(breed.temperament)
+                        Text("Life Span: \(breed.lifeSpan)")
+                            .font(.subheadline)
+                        Text("Temperament: \(breed.temperament)")
                             .font(.footnote)
-                        Text(breed.explaination)
+                        Text("Description: \(breed.explaination)")
                         
                         HStack {
                             Text("Energy Level")
