@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIService {
+struct APIService: APIServiceProtocol {
     
     // MARK: - Constants
     let session = URLSession.shared
