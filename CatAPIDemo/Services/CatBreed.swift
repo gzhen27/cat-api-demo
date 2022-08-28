@@ -12,8 +12,7 @@ class CatBreed: ObservableObject {
     // MARK: - Constants
     let baseUrl = "https://api.thecatapi.com/v1"
     let path = "/breeds"
-    
-    let apiService = APIService()
+    let apiService: APIServiceProtocol
     
     // MARK: - Property Wrappers
     @Published var breeds = [Breed]()
@@ -26,7 +25,8 @@ class CatBreed: ObservableObject {
     }
     
     // MARK: - LifeCycle
-    init() {
+    init(apiService: APIServiceProtocol = APIService()) {
+        self.apiService = apiService
         fetchAll()
     }
     
